@@ -4,40 +4,40 @@
 
 ## 문서 구조
 
-### 📋 Planning (기획)
+### 📋 01. Planning (기획)
 프로젝트의 전체적인 방향과 계획을 담은 문서들입니다.
 
-- **[프로젝트 개요](./planning/project-overview.md)** - 프로젝트의 목표, 타겟 사용자, 비즈니스 모델
-- **[개발 로드맵](./planning/roadmap.md)** - 단계별 개발 계획 및 일정
+- **[01. 프로젝트 개요](./01-planning/01-project-overview.md)** - 프로젝트의 목표, 타겟 사용자, 비즈니스 모델
+- **[02. 개발 로드맵](./01-planning/02-roadmap.md)** - 단계별 개발 계획 및 일정
 
-### 📝 Requirements (요구사항)
+### 📝 02. Requirements (요구사항)
 시스템에서 구현해야 할 기능들을 정리한 문서입니다.
 
-- **[기능 요구사항](./requirements/functional-requirements.md)** - 사용자 관리, 강의 관리, 수강 관리 등 모든 기능 명세
+- **[01. 기능 요구사항](./02-requirements/01-functional-requirements.md)** - 사용자 관리, 강의 관리, 수강 관리 등 모든 기능 명세
 
-### 🏗️ Architecture (아키텍처)
+### 🏗️ 03. Architecture (아키텍처)
 시스템의 기술적인 구조와 설계를 담은 문서들입니다.
 
-- **[기술 스택](./architecture/tech-stack.md)** - 프론트엔드, 백엔드, 인프라 기술 선택
-- **[시스템 아키텍처](./architecture/system-architecture.md)** - 전체 시스템 구조 및 컴포넌트
-- **[데이터베이스 스키마](./architecture/database-schema.md)** - ERD 및 테이블 설계
+- **[01. 기술 스택](./03-architecture/01-tech-stack.md)** - 프론트엔드, 백엔드, 인프라 기술 선택
+- **[02. 시스템 아키텍처](./03-architecture/02-system-architecture.md)** - 전체 시스템 구조 및 컴포넌트
+- **[03. 데이터베이스 스키마](./03-architecture/03-database-schema.md)** - ERD 및 테이블 설계
 
-### 🎨 Design (디자인)
+### 🎨 04. Design (디자인)
 UI/UX 디자인 가이드라인 문서입니다.
 
-- **[UI/UX 디자인](./design/ui-ux-design.md)** - 디자인 시스템, 컬러, 타이포그래피, 레이아웃
+- **[01. UI/UX 디자인](./04-design/01-ui-ux-design.md)** - 디자인 시스템, 컬러, 타이포그래피, 레이아웃
 
 ## 빠른 시작
 
 ### 1. 프로젝트 이해하기
-1. [프로젝트 개요](./planning/project-overview.md)를 읽고 전체적인 방향을 파악하세요.
-2. [기능 요구사항](./requirements/functional-requirements.md)을 확인하여 구현할 기능들을 파악하세요.
+1. [프로젝트 개요](./01-planning/01-project-overview.md)를 읽고 전체적인 방향을 파악하세요.
+2. [기능 요구사항](./02-requirements/01-functional-requirements.md)을 확인하여 구현할 기능들을 파악하세요.
 
 ### 2. 기술 스택 검토
-[기술 스택](./architecture/tech-stack.md) 문서를 통해 사용할 기술들을 확인하세요.
+[기술 스택](./03-architecture/01-tech-stack.md) 문서를 통해 사용할 기술들을 확인하세요.
 
 ### 3. 개발 시작
-[개발 로드맵](./planning/roadmap.md)을 참고하여 단계별로 개발을 진행하세요.
+[개발 로드맵](./01-planning/02-roadmap.md)을 참고하여 단계별로 개발을 진행하세요.
 
 ## 주요 특징
 
