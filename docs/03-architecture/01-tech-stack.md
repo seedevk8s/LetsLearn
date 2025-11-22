@@ -1,5 +1,17 @@
 # 기술 스택
 
+> **📝 수정 사항**: 백엔드를 Node.js에서 **Spring Boot**로, 데이터베이스를 PostgreSQL에서 **MySQL**로 변경했습니다.
+
+## 아키텍처 개요
+
+- **프론트엔드**: Next.js (이 레포의 `/frontend` 디렉토리)
+- **백엔드**: Spring Boot (이 레포의 루트/src)
+- **데이터베이스**: MySQL
+- **통신**: REST API
+- **프로젝트 구조**: 모노레포 (Monorepo)
+
+---
+
 ## 프론트엔드
 
 ### 핵심 프레임워크
@@ -27,28 +39,28 @@
 ## 백엔드
 
 ### 서버 프레임워크
-- **Node.js** - 런타임
-- **Express.js** 또는 **NestJS** - 백엔드 프레임워크
-- **TypeScript** - 타입 안정성
+- **Java 17+** - 프로그래밍 언어
+- **Spring Boot 3.x** - 백엔드 프레임워크
+- **Spring Web** - REST API 개발
+- **Spring Data JPA** - 데이터 접근 계층
 
 ### 데이터베이스
-- **PostgreSQL** - 주 데이터베이스 (관계형)
-- **Redis** - 캐싱 및 세션 관리
-- **MongoDB** (선택사항) - 로그 및 비정형 데이터
+- **MySQL 8.0** - 주 데이터베이스 (관계형) ~~PostgreSQL~~
+- **Redis** (Phase 2) - 캐싱 및 세션 관리
 
-### ORM/쿼리 빌더
-- **Prisma** 또는 **TypeORM** - ORM
-- **Drizzle ORM** (대안)
+### ORM
+- **Hibernate** - JPA 구현체
+- **Spring Data JPA** - 리포지토리 추상화
 
 ### 인증/보안
+- **Spring Security** - 보안 프레임워크
 - **JWT** - 토큰 기반 인증
-- **Passport.js** - 인증 미들웨어
-- **bcrypt** - 비밀번호 해싱
-- **OAuth 2.0** - 소셜 로그인
+- **BCrypt** - 비밀번호 해싱
+- **OAuth 2.0** - 소셜 로그인 (Spring Security OAuth2)
 
 ### API
 - **REST API** - 기본 API 구조
-- **GraphQL** (선택사항) - 유연한 데이터 쿼리
+- **Spring REST Docs** 또는 **Swagger/OpenAPI** - API 문서화
 
 ## 인프라 및 DevOps
 
@@ -118,6 +130,54 @@
 4. **비용 효율** - 초기 투자 최소화
 
 ### 단계별 접근
-- **MVP 단계**: Next.js + PostgreSQL + AWS S3 + Vercel
-- **성장 단계**: Redis 캐싱 추가, CDN 적용
-- **확장 단계**: 마이크로서비스, Kubernetes, 글로벌 확장
+- **MVP 단계 (Phase 1)**:
+  - Backend: Spring Boot + MySQL + AWS S3
+  - Frontend: Next.js (모노레포)
+- **성장 단계 (Phase 2)**: Redis 캐싱 추가, CDN 적용
+- **확장 단계 (Phase 3-4)**: 마이크로서비스, Kubernetes, 글로벌 확장
+
+---
+
+## 모노레포 프로젝트 구조
+
+```
+LetsLearn/                   # 모노레포 루트
+├── src/                     # Spring Boot 백엔드
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/letslearn/
+│   │   │       ├── config/          # Spring 설정
+│   │   │       ├── controller/      # REST API 컨트롤러
+│   │   │       ├── service/         # 비즈니스 로직
+│   │   │       ├── repository/      # 데이터 접근
+│   │   │       ├── domain/          # 엔티티
+│   │   │       └── dto/             # 데이터 전송 객체
+│   │   └── resources/
+│   │       ├── application.yaml     # 애플리케이션 설정
+│   │       └── db/migration/        # 데이터베이스 마이그레이션
+│   └── test/                # 테스트 코드
+├── frontend/                # Next.js 프론트엔드
+│   ├── app/                 # Next.js App Router
+│   ├── components/          # React 컴포넌트
+│   ├── lib/                 # 유틸리티 함수
+│   ├── hooks/               # Custom Hooks
+│   ├── public/              # 정적 파일
+│   ├── package.json
+│   └── next.config.js
+├── docs/                    # 프로젝트 문서
+├── pom.xml                  # Maven 의존성
+└── README.md
+```
+
+### 개발 서버 실행
+
+**백엔드 (포트 8081)**:
+```bash
+./mvnw spring-boot:run
+```
+
+**프론트엔드 (포트 3000)**:
+```bash
+cd frontend
+npm run dev
+```

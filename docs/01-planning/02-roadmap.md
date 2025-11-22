@@ -1,5 +1,7 @@
 # 개발 로드맵
 
+> **📝 수정 사항**: 백엔드를 **Spring Boot**로, 데이터베이스를 **MySQL**로 변경했습니다. 프론트엔드는 별도 레포지토리로 관리합니다.
+
 ## Phase 1: MVP (4-6주)
 
 ### 목표
@@ -7,9 +9,10 @@
 
 ### 주요 기능
 - [x] 프로젝트 세팅
-  - [ ] Next.js + TypeScript 프로젝트 초기화
+  - [x] Spring Boot + MySQL 프로젝트 초기화 ~~Next.js + TypeScript~~
   - [ ] 데이터베이스 스키마 설계 및 생성
   - [ ] 기본 폴더 구조 및 아키텍처 설정
+  - [ ] Next.js 프론트엔드 프로젝트 생성 (모노레포 `/frontend` 디렉토리)
 
 - [ ] 인증 시스템
   - [ ] 이메일 회원가입/로그인
@@ -37,11 +40,14 @@
   - [ ] 결제 완료 후 수강 권한 부여
 
 ### 기술 스택
-- Frontend: Next.js 14, TypeScript, Tailwind CSS
-- Backend: Next.js API Routes
-- Database: PostgreSQL (Supabase 또는 Railway)
-- Storage: AWS S3 또는 Cloudflare R2
-- Deployment: Vercel
+- **Backend**: Spring Boot 3.x, Java 17+, Spring Data JPA ~~Next.js API Routes~~
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS (모노레포 `/frontend`)
+- **Database**: MySQL 8.0 ~~PostgreSQL~~
+- **Storage**: AWS S3
+- **Architecture**: 모노레포 (Monorepo)
+- **Deployment**:
+  - Backend: AWS EC2, Railway, 또는 Heroku
+  - Frontend: Vercel 또는 Netlify
 
 ---
 
