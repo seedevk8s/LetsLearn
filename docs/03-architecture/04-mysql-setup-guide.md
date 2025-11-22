@@ -194,6 +194,6 @@ spring:
 1. MySQL 설치 및 실행
 2. `learn_db` 데이터베이스 생성
 3. Spring Boot 애플리케이션 재시작
-4. 브라우저에서 `http://localhost:8080` 접속 확인
+4. 브라우저에서 `http://localhost:8081` 접속 확인
 
 애플리케이션이 정상적으로 시작되면 Hibernate가 자동으로 테이블을 생성합니다 (`ddl-auto: update` 설정).
