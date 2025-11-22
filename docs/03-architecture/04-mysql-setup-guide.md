@@ -29,11 +29,7 @@ url: jdbc:mysql://localhost:3307/learn_db?useSSL=false&serverTimezone=Asia/Seoul
 2. **MySQL 컨테이너 실행**
 
 ```bash
-docker run --name mysql-letslearn \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=learn_db \
-  -p 3307:3306 \
-  -d mysql:8.0
+docker run --name mysql-letslearn -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=learn_db -p 3307:3306 -d mysql:8.0
 ```
 
 3. **컨테이너 상태 확인**
