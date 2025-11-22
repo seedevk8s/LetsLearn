@@ -9,7 +9,7 @@ Spring Boot 애플리케이션의 MySQL 연결 설정을 수정했습니다.
 **파일**: `src/main/resources/application.yaml`
 
 ```yaml
-url: jdbc:mysql://localhost:3306/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+url: jdbc:mysql://localhost:3307/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
 ```
 
 `allowPublicKeyRetrieval=true` 파라미터를 추가하여 "Public Key Retrieval is not allowed" 오류를 해결했습니다.
@@ -32,7 +32,7 @@ url: jdbc:mysql://localhost:3306/learn_db?useSSL=false&serverTimezone=Asia/Seoul
 docker run --name mysql-letslearn \
   -e MYSQL_ROOT_PASSWORD=root \
   -e MYSQL_DATABASE=learn_db \
-  -p 3306:3306 \
+  -p 3307:3306 \
   -d mysql:8.0
 ```
 
@@ -118,7 +118,7 @@ spring:
   # MySQL Database Configuration
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3307/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: root
     password: root
     hikari:
@@ -144,7 +144,7 @@ spring:
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3307/learn_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: root
     password: root
   jpa:
@@ -172,7 +172,7 @@ spring:
 
 ### 1. 연결 거부 (Connection refused)
 - MySQL이 실행 중인지 확인: `sudo systemctl status mysql` (Linux)
-- 포트 3306이 열려있는지 확인: `netstat -an | grep 3306`
+- 포트 3307이 열려있는지 확인: `netstat -an | grep 3307`
 
 ### 2. 인증 실패 (Access denied)
 - 사용자명과 비밀번호 확인
